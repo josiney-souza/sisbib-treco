@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style>
+	</style>
+	<link rel="stylesheet" type="text/css" href="sisbib-treco.css">
+</head>
+<body>
+	<h1 title="SIStema de Controle de BIBliografias
+do Curso Superior de Tecnologia (CST)
+em REdes de COmputadores
+do IFC campus Brusque">SisBib-TReCo</h1>
+
+	<h2>Consultas:</h2>
+		<form action="consultas.php">
+			<fieldset>
+				<legend>Consultas simples</legend>
+				<input type="radio" name="consulta" value="Componentes_Curriculares" id="con01">
+				<label for="con01">Consultar Componentes Curriculares</label><br>
+				<input type="radio" name="consulta" value="Livros" id="con02">
+				<label for="con02">Consultar Livros</label><br>
+				<input type="radio" name="consulta" value="Tipos" id="con03">
+				<label for="con03">Consultar Tipos</label><br>
+				<input type="radio" name="consulta" value="con04" id="con04">
+				<label for="con04">Consultar Livros com 0 exemplares</label><br>
+				<input type="radio" name="consulta" value="con05" id="con05">
+				<label for="con05">Consultar Livros sem exemplares apurados na biblioteca</label><br>
+				<input type="radio" name="consulta" value="con06" id="con06">
+				<label for="con06">Consultar Livros sem edição definida na base da dados</label><br>
+			</fieldset>
+			<fieldset>
+				<legend>Consultas elaboradas</legend>
+				<input type="radio" name="consulta" value="con11" id="con11" checked>
+				<label for="con11">Relação entre todos os livros, tipos e semestres de uso</label><br>
+				<input type="radio" name="consulta" value="con12" id="con12">
+				<label for="con12">Relação de todos os livros compartilhados por mais de um componente curricular</label><br>
+				<input type="radio" name="consulta" value="con13" id="con13">
+				<label for="con13">Relação de todos os livros <b>únicos</b> compartilhados por mais de um componente curricular</label><br>
+			</fieldset>
+			<input type="submit" value="Realizar consulta">
+		</form>
+
+	<h2>Inserções:</h2>
+
+	<h2>Deleções</h2>
+
+	<h2>Atualizações</h2>
+</body>
+</html>
