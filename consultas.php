@@ -183,6 +183,38 @@ try {
   	}
   	echo "\t</table>\n";
   }
+  elseif ($table == "con11") {
+  	echo "\t<h2>Relação entre todos os livros, tipos e semestres de uso</h2>\n";
+  	echo "\t<table>\n";
+  	echo "\t\t<tr>\n";
+  	echo "\t\t\t<th>#</th>\n";
+  	echo "\t\t\t<th>Autor</th>\n";
+  	echo "\t\t\t<th>Título</th>\n";
+  	echo "\t\t\t<th>Tipo</th>\n";
+  	echo "\t\t\t<th>Componente Curricular</th>\n";
+  	echo "\t\t</tr>\n";
+  	foreach($db->query("SELECT
+	  		l.autor as Autor,
+			l.titulo as Título,
+			t.tipo as Tipo,
+			cc.cc as Componente_Curricular,
+			cc.semestre as Semestre
+		FROM
+			Usos as u, Livros as l, Tipos as t, Componentes_Curriculares as cc
+		WHERE
+			u.livro = l.id AND u.tipo = t.id AND u.cc = cc.id
+		ORDER BY u.id") as $row) {
+    	echo "\t\t<tr>\n";
+  		echo "\t\t\t<td>$num_linha</td>\n";
+    	echo "\t\t\t<td>" . $row['Autor'] . "</td>\n";
+    	echo "\t\t\t<td>" . $row['Título'] . "</td>\n";
+    	echo "\t\t\t<td>" . $row['Tipo'] . "</td>\n";
+    	echo "\t\t\t<td>" . $row['Componente_Curricular'] . "</td>\n";
+    	echo "\t\t</tr>\n";
+    	$num_linha++;
+  	}
+  	echo "\t</table>\n";
+  }
   else {
   	echo "\t<h2>Função ainda não implementada</h2>\n";
   }
