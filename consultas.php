@@ -103,6 +103,38 @@ try {
   	}
   	echo "\t</table>\n";
   }
+  elseif ($table == "con05") {
+  	echo "\t<h2>Livros sem exemplares apurados na biblioteca</h2>\n";
+  	echo "\t<table>\n";
+  	echo "\t\t<tr>\n";
+  	echo "\t\t\t<th>#</th>\n";
+  	echo "\t\t\t<th>Autor</th>\n";
+  	echo "\t\t\t<th>Título</th>\n";
+  	echo "\t\t\t<th>Edição</th>\n";
+  	echo "\t\t\t<th>Local</th>\n";
+  	echo "\t\t\t<th>Editora</th>\n";
+  	echo "\t\t\t<th>Ano</th>\n";
+  	echo "\t\t\t<th>Exemplares</th>\n";
+  	echo "\t\t</tr>\n";
+  	foreach($db->query("SELECT autor, titulo, subtitulo, edicao, local, editora, ano, exemplares FROM Livros WHERE exemplares < 0") as $row) {
+    	echo "\t\t<tr>\n";
+  		echo "\t\t\t<td>$num_linha</td>\n";
+    	echo "\t\t\t<td>" . $row['autor'] . "</td>\n";
+    	echo "\t\t\t<td>" . $row['titulo'] . ":" . $row['subtitulo'] . "</td>\n";
+    	if ($row['edicao'] < 0) {
+    		echo "\t\t\t<td>?????</td>\n";
+    	} else {
+	    	echo "\t\t\t<td>" . $row['edicao'] . "</td>\n";
+	    }
+    	echo "\t\t\t<td>" . $row['local'] . "</td>\n";
+    	echo "\t\t\t<td>" . $row['editora'] . "</td>\n";
+    	echo "\t\t\t<td>" . $row['ano'] . "</td>\n";
+    	echo "\t\t\t<td>?????</td>\n";
+    	echo "\t\t</tr>\n";
+    	$num_linha++;
+  	}
+  	echo "\t</table>\n";
+  }
   elseif ($table == "Tipos") {
   	echo "\t<h2>Tipos de referências bibliográficas</h2>\n";
   	echo "\t<table>\n";
