@@ -22,3 +22,17 @@ input[type=submit]:hover {
 	background-color: #C90C0F;
 	border-color: #C90C0F;
 }
+
+/**********************
+ * Mais usado em HTML *
+ **********************/
+legend {
+	border: 5px #C90C0F double;
+	margin: auto;
+}
+fieldset {
+	border: 2px #2f9e41 solid;
+}
+input {
+	padding: 0.5rem;
+}
