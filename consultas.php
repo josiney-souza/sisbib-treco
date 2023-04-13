@@ -75,6 +75,22 @@ try {
   	}
   	echo "\t</table>\n";
   }
+  elseif ($table == "Tipos") {
+  	echo "\t<h2>Tipos de referências bibliográficas</h2>\n";
+  	echo "\t<table>\n";
+  	echo "\t\t<tr>\n";
+  	echo "\t\t\t<th>#</th>\n";
+  	echo "\t\t\t<th>Tipo</th>\n";
+  	echo "\t\t</tr>\n";
+  	foreach($db->query("SELECT tipo FROM $table") as $row) {
+    	echo "\t\t<tr>\n";
+  		echo "\t\t\t<td>$num_linha</td>\n";
+    	echo "\t\t\t<td>" . $row['tipo'] . "</td>\n";
+    	echo "\t\t</tr>\n";
+    	$num_linha++;
+  	}
+  	echo "\t</table>\n";
+  }
   else {
   	echo "\t<h2>Função ainda não implementada</h2>\n";
   }
