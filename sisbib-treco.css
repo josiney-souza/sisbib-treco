@@ -1,0 +1,24 @@
+/*********
+ * Geral *
+ *********/
+body {
+	color: #1E1E1E; /* texto IFC */
+}
+h1 {
+	color: #C90C0F; /* vermelho IFC */
+}
+h2 {
+	color: #2f9e41; /* verde IFC */
+}
+input[type=submit] {
+	background-color: #2f9e41;
+	color: white;
+	border-color: #2f9e41;
+	display: block;
+	margin: auto;
+	transition: 0.5s;
+}
+input[type=submit]:hover {
+	background-color: #C90C0F;
+	border-color: #C90C0F;
+}
